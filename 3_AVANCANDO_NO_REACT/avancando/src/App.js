@@ -11,6 +11,7 @@ import ListRender from "./components/ListRender";
 import ManageData from "./components/ManageData";
 import MessageState from "./components/MessageState";
 import ShowUserName from "./components/ShowUserName";
+import UserDetails from "./components/UserDetails";
 
 function App() {
   const cars = [
@@ -28,6 +29,24 @@ function App() {
   const handleMessage = (msg) => {
     setMessage(msg);
   };
+
+  const users = [
+    {
+      id: 1, name: "Jonathas", job: "Programador",
+      age: 36
+    },
+    {
+      id: 2, name: "Jeffersom", job: "Empresário",
+      age: 35
+    },
+    {
+      id: 3, name: "Junior", job: "Técnico de internet", age: 34
+    },
+    {
+      id: 4, name: "João Luis", job: "Estudante",
+      age: 10
+    }
+  ];
 
   return (
     <div className="App">
@@ -71,6 +90,14 @@ function App() {
       {/* state lift */}
       <MessageState msg={message} />
       <ChangeMessageState handleMessage={handleMessage} />
+      {/*Desafio*/}
+      {users.map((user) => (
+        <UserDetails key={user.id}
+          name={user.name}
+          job={user.job}
+          age={user.age}
+        />
+      ))}
     </div>
   );
 }

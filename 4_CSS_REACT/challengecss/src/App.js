@@ -3,16 +3,16 @@ import "./App.css";
 import Car from "./components/Car";
 
 function App() {
-  const myCars = [
-    { name: "Fusca", km: 10000, color: "Branca" },
-    { name: "Polo", km: 32000, color: "Cinza" },
-    { name: "Onix", km: 0, color: "Preto" },
+  const Carros = [
+    { nome: "Jetta", km: 100000, cor: "Branca" },
+    { nome: "Lancer", km: 27000, cor: "Cinza" },
+    { nome: "408 thp", km: 57000, cor: "Preto" },
   ];
   return (
     <div className="App">
       <h1>Showroom de carros</h1>
       <div className="car-container">
-        {myCars.map((car) => (
+        {Carros.map((car) => (
           <Car car={car} />
         ))}
       </div>
